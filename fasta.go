@@ -44,7 +44,7 @@ func NewFastaFile(filename string) *FastaFile {
 			}
 
 			// Standard FASTA identifiers look like: ">foo_<id>"
-			identifier = strings.Split(text, ">")[1]
+			identifier = text[1:]
 		} else {
 			// Append here since multi-line DNA strings are possible
 			dna = append(dna, []byte(text)...)
